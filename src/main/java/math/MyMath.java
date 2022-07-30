@@ -17,37 +17,50 @@ public class MyMath {
 
     public static void calculateSoccerScore(Club clubOne, Club clubTwo, GameResult result) {
         if (result == GameResult.WIN) {
-            clubOne.setScore(clubOne.getScore() + 3);
-            clubOne.setNumberOfWins(clubOne.getNumberOfWins() + 1);
-            clubTwo.setNumberOfWins(clubTwo.getNumberOFLosses() + 1);
+            addScore(clubOne, 3);
+            calculateNumberOfWinOrLose(clubOne, clubTwo);
         } else if (result == GameResult.DRAW) {
-            clubOne.setScore(clubOne.getScore() + 1);
-            clubTwo.setScore(clubTwo.getScore() + 1);
-            ((SoccerClub) clubOne).setNumberOfDraws(((SoccerClub) clubOne).getNumberOfDraws() + 1);
-            ((SoccerClub) clubTwo).setNumberOfDraws(((SoccerClub) clubTwo).getNumberOfDraws() + 1);
+            addScore(clubOne, 1);
+            addScore(clubTwo, 1);
+            calculateNumberOfDraw((SoccerClub) clubOne, (SoccerClub) clubTwo);
         } else {
-            clubTwo.setScore(clubTwo.getScore() + 3);
-            clubTwo.setNumberOfWins(clubTwo.getNumberOfWins() + 1);
-            clubOne.setNumberOfWins(clubOne.getNumberOFLosses() + 1);
+            addScore(clubTwo, 3);
+            calculateNumberOfWinOrLose(clubTwo, clubOne);
         }
     }
 
     public static void calculateVolleyballScore(Club clubOne, Club clubTwo, GameResult result) {
         if (result == GameResult.WIN) {
+            calculateNumberOfWinOrLose(clubOne, clubTwo);
             if (((VolleyballClub) clubTwo).getNumberOfLosingSets() == 2) {
-                clubTwo.setScore(clubTwo.getScore() + 1);
-                clubOne.setScore(clubOne.getScore() + 2);
+                addScore(clubTwo, 1);
+                addScore(clubOne, 2);
             } else {
-                clubOne.setScore(clubOne.getScore() + 3);
+                addScore(clubOne, 3);
             }
         } else if (result == GameResult.LOSS) {
+            calculateNumberOfWinOrLose(clubTwo, clubOne);
             if (((VolleyballClub) clubOne).getNumberOfLosingSets() == 2) {
-                clubOne.setScore(clubOne.getScore() + 1);
-                clubTwo.setScore(clubTwo.getScore() + 2);
+                addScore(clubOne, 1);
+                addScore(clubTwo, 2);
             } else {
-                clubTwo.setScore(clubTwo.getScore() + 3);
+                addScore(clubTwo, 3);
             }
         }
+    }
+
+    private static void addScore(Club club, int score) {
+        club.setScore(club.getScore() + score);
+    }
+
+    private static void calculateNumberOfWinOrLose(Club clubOne, Club clubTwo) {
+        clubOne.setNumberOfWins(clubOne.getNumberOfWins() + 1);
+        clubTwo.setNumberOFLosses(clubTwo.getNumberOFLosses() + 1);
+    }
+
+    private static void calculateNumberOfDraw(SoccerClub clubOne, SoccerClub clubTwo) {
+        clubOne.setNumberOfDraws(clubOne.getNumberOfDraws() + 1);
+        clubTwo.setNumberOfDraws(clubTwo.getNumberOfDraws() + 1);
     }
 
 }
