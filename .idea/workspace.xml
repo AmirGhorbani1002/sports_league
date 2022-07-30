@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor with my math">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/math/MyMath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/math/MyMath.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="upgrade my math">
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Club.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659171863020</updated>
-      <workItem from="1659171865256" duration="14609000" />
+      <workItem from="1659171865256" duration="15123000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -78,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659189969761</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="upgrade my math">
+      <created>1659191662662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659191662662</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +106,7 @@
     <MESSAGE value="add leagues and menus" />
     <MESSAGE value="refactor code" />
     <MESSAGE value="refactor with my math" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor with my math" />
+    <MESSAGE value="upgrade my math" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade my math" />
   </component>
 </project>

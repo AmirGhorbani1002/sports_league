@@ -2,6 +2,8 @@ package entity;
 
 import enums.GameResult;
 
+import java.util.Objects;
+
 public abstract class Club {
 
     private final String name;
@@ -66,4 +68,16 @@ public abstract class Club {
         this.numberOFLosses = numberOFLosses;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Club club = (Club) o;
+        return Objects.equals(name, club.name) || Objects.equals(code, club.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, code);
+    }
 }
