@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add leagues and menus">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/League.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/list/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/list/ClubList.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/math/MyMath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659171863020</updated>
-      <workItem from="1659171865256" duration="12185000" />
+      <workItem from="1659171865256" duration="12937000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -69,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659179570348</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor code">
+      <created>1659189213743</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659189213743</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +91,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add clubs and club list and enum" />
     <MESSAGE value="add leagues and menus" />
-    <option name="LAST_COMMIT_MESSAGE" value="add leagues and menus" />
+    <MESSAGE value="refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
   </component>
 </project>
