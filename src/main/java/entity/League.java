@@ -2,6 +2,8 @@ package entity;
 
 import list.ClubList;
 
+import java.util.Comparator;
+
 public class League {
 
     private ClubList clubs;
@@ -20,4 +22,10 @@ public class League {
     public void setClubs(ClubList clubs) {
         this.clubs = clubs;
     }
+
+    @Override
+    public String toString(){
+        return null;
+    }
+
 }

@@ -66,6 +66,4 @@ public abstract class Club {
         this.numberOFLosses = numberOFLosses;
     }
 
-    public abstract void scoreCalculation(GameResult result);
-
 }

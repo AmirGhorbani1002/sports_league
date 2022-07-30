@@ -3,9 +3,10 @@ package list;
 import entity.Club;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class ClubList {
+public class ClubList implements Comparator<Club> {
 
     private Club[] clubs = new Club[1000];
     private int index = 0;
@@ -47,4 +48,8 @@ public class ClubList {
 
     public void remove(Club club) {}
 
+    @Override
+    public int compare(Club c1, Club c2) {
+        return c1.getScore() - c2.getScore();
+    }
 }
