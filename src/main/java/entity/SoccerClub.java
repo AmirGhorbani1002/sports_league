@@ -1,6 +1,5 @@
 package entity;
 
-import enums.GameResult;
 
 public class SoccerClub extends Club{
 

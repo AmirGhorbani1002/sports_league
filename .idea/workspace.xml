@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="upgrade my math">
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Club.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add equals and hashcode to club">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/DBConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -47,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659171863020</updated>
-      <workItem from="1659171865256" duration="15123000" />
+      <workItem from="1659171865256" duration="18434000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -84,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659191662662</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add equals and hashcode to club">
+      <created>1659192220908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659192220908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +122,7 @@
     <MESSAGE value="refactor code" />
     <MESSAGE value="refactor with my math" />
     <MESSAGE value="upgrade my math" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade my math" />
+    <MESSAGE value="add equals and hashcode to club" />
+    <option name="LAST_COMMIT_MESSAGE" value="add equals and hashcode to club" />
   </component>
 </project>
