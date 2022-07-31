@@ -2,6 +2,7 @@ package entity;
 
 import enums.GameResult;
 
+import java.sql.Date;
 import java.util.Objects;
 
 public abstract class Club {
@@ -9,6 +10,7 @@ public abstract class Club {
     private final String name;
     private final int numberOfPlayers;
     private final String code;
+    private final Date createDate;
     private int score;
     private int numberOfGamesPlayed;
     private int numberOfWins;
@@ -22,6 +24,7 @@ public abstract class Club {
         this.numberOfGamesPlayed = 0;
         this.numberOfWins = 0;
         this.numberOFLosses = 0;
+        this.createDate = Date.valueOf(java.time.LocalDate.now());
     }
 
     public String getName() {
@@ -66,6 +69,10 @@ public abstract class Club {
 
     public void setNumberOFLosses(int numberOFLosses) {
         this.numberOFLosses = numberOFLosses;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
     }
 
     @Override

@@ -5,7 +5,7 @@ public class VolleyballClub extends Club {
     private int numberOfWinningSets;
     private int numberOfLosingSets;
 
-    public VolleyballClub(String name, int numberOfPlayers, String code) {
+    public VolleyballClub(String name, String code) {
         super(name, 6, code);
     }
     public int getNumberOfWinningSets() {

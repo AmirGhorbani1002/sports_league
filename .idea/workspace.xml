@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add equals and hashcode to club">
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/DBConfig.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add database">
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/SoccerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Club.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,18 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +56,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659171863020</updated>
-      <workItem from="1659171865256" duration="18434000" />
+      <workItem from="1659171865256" duration="20858000" />
+      <workItem from="1659251171113" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -99,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659192220908</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add database">
+      <created>1659195486420</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659195486420</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +132,7 @@
     <MESSAGE value="refactor with my math" />
     <MESSAGE value="upgrade my math" />
     <MESSAGE value="add equals and hashcode to club" />
-    <option name="LAST_COMMIT_MESSAGE" value="add equals and hashcode to club" />
+    <MESSAGE value="add database" />
+    <option name="LAST_COMMIT_MESSAGE" value="add database" />
   </component>
 </project>
