@@ -1,20 +1,14 @@
 package menu;
 
 import entity.Club;
-import entity.League;
-import entity.SoccerClub;
-import entity.VolleyballClub;
-import enums.GameResult;
-import list.sort.ClubListSortByScore;
 import object.ApplicationObjects;
 
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Objects;
 
-public class LeaguesMenu {
+public class League {
 
-    public static void showMenu(League league, Club checkType) throws SQLException {
+    public static void showMenu(entity.League league, Club checkType) throws SQLException {
         while (true) {
             System.out.println("1) View table");
             System.out.println("2) View information about a club");
