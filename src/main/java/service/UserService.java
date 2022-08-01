@@ -1,5 +1,6 @@
 package service;
 
+import check.Check;
 import entity.*;
 import enums.GameResult;
 
@@ -9,7 +10,7 @@ public class UserService {
 
     public void saveClub(League league, Club checkType, String name, String code) {
         if(loadClubByName(league,name) != null && loadClubByCode(league,code) != null){
-            System.out.println("There is a club with this name or code");
+            Check.printMessage("There is a club with this name or code");
         } else{
             Club club2 = getClub(checkType, name, code);
             league.getClubs().add(club2);
@@ -40,7 +41,7 @@ public class UserService {
 
     public void showTable(League league) {
         if(league.getClubs().getClubs()[0] == null){
-            System.out.println("This league does not have any clubs yet");
+            Check.printMessage("This league does not have any clubs yet");
         } else{
             for (Club club : league.getClubs().getClubs()) {
                 if (club != null)
@@ -52,7 +53,7 @@ public class UserService {
 
     public void deleteClub(League league, String name) {
         if(loadClubByName(league,name) == null){
-            System.out.println("There is no club with this profile");
+            Check.printMessage("There is no club with this profile");
         } else{
             for (Club club : league.getClubs().getClubs()) {
                 if (Objects.equals(club.getName(), name)) {

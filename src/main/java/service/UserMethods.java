@@ -1,5 +1,6 @@
 package service;
 
+import check.Check;
 import entity.Club;
 import entity.League;
 import entity.SoccerClub;
@@ -20,7 +21,7 @@ public class UserMethods {
 
     public void showClub(League league) {
         if (league.getClubs().getClubs()[0] == null) {
-            System.out.println("This league does not have any clubs yet");
+            Check.printMessage("This league does not have any clubs yet");
         } else {
             System.out.print("Enter the name of the club you want to see: ");
             ApplicationObjects.getScanner().nextLine();
@@ -28,7 +29,7 @@ public class UserMethods {
             if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
                 System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
             else {
-                System.out.println("There is no club with this name");
+                Check.printMessage("There is no club with this name");
             }
         }
 
@@ -51,31 +52,28 @@ public class UserMethods {
 
     public void addGame(League league, Club checkType) {
         if (league.getClubs().getClubs()[0] == null || league.getClubs().getClubs()[1] == null) {
-            System.out.println("This league does not have enough clubs for game yet");
+            Check.printMessage("This league does not have enough clubs for game yet");
         } else {
-            while (true) {
-                System.out.print("Enter the name of first club: ");
-                ApplicationObjects.getScanner().nextLine();
-                String nameOne = ApplicationObjects.getScanner().nextLine();
-                Club clubOne = getClub(league, nameOne);
-                if (clubOne == null) continue;
-                System.out.print("Enter the name of second club: ");
-                String nameTwo = ApplicationObjects.getScanner().nextLine();
-                Club clubTwo = getClub(league, nameTwo);
-                if (clubTwo == null) continue;
-                gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
-                break;
-            }
+            System.out.print("Enter the name of first club: ");
+            ApplicationObjects.getScanner().nextLine();
+            String nameOne = ApplicationObjects.getScanner().nextLine();
+            Club clubOne = getClub(league, nameOne);
+            if (clubOne == null) return;
+            System.out.print("Enter the name of second club: ");
+            String nameTwo = ApplicationObjects.getScanner().nextLine();
+            Club clubTwo = getClub(league, nameTwo);
+            if (clubTwo == null) return;
+            gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
         }
     }
 
-    private Club getClub(League league, String nameOne) {
-        Club clubOne = ApplicationObjects.getUserService().loadClubByName(league, nameOne);
-        if (clubOne == null) {
-            System.out.println("There is no club with this name");
+    private Club getClub(League league, String name) {
+        Club club = ApplicationObjects.getUserService().loadClubByName(league, name);
+        if (club == null) {
+            Check.printMessage("There is no club with this name");
             return null;
         }
-        return clubOne;
+        return club;
     }
 
     private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) {

@@ -1,5 +1,6 @@
 package menu;
 
+import check.Check;
 import entity.SoccerClub;
 import entity.VolleyballClub;
 import object.ApplicationObjects;
@@ -24,7 +25,7 @@ public class OurLeagues {
             } else if(Objects.equals(input, "3")){
                 break;
             } else{
-                System.out.println("Wrong input");
+                Check.printMessage("Wrong input");
             }
         }
     }
