@@ -15,18 +15,18 @@ public class UserMethods {
 
     public void showTable(League league) {
         Arrays.sort(league.getClubs().getClubs(), new ClubListSortByScore());
-        for (Club club : league.getClubs().getClubs()) {
-            if (club != null)
-                System.out.println(club);
-            else break;
-        }
+        ApplicationObjects.getUserService().showTable(league);
     }
 
     public void showClub(League league) {
         System.out.print("Enter the name of the club you want to see: ");
         ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
-        System.out.println(ApplicationObjects.getUserService().loadClub(league, name));
+        if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
+            System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
+        else{
+            System.out.println("There is no club with this profile");
+        }
     }
 
     public void addClub(League league, Club checkType) {
@@ -46,10 +46,10 @@ public class UserMethods {
         System.out.print("Enter the name of first club: ");
         ApplicationObjects.getScanner().nextLine();
         String nameOne = ApplicationObjects.getScanner().nextLine();
-        Club clubOne = ApplicationObjects.getUserService().loadClub(league, nameOne);
+        Club clubOne = ApplicationObjects.getUserService().loadClubByName(league, nameOne);
         System.out.print("Enter the name of second club: ");
         String nameTwo = ApplicationObjects.getScanner().nextLine();
-        Club clubTwo = ApplicationObjects.getUserService().loadClub(league, nameTwo);
+        Club clubTwo = ApplicationObjects.getUserService().loadClubByName(league, nameTwo);
         gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
     }
 

@@ -2,20 +2,23 @@ package service;
 
 import entity.*;
 import enums.GameResult;
-import object.ApplicationObjects;
 
 import java.util.Objects;
 
 public class UserService {
 
     public void saveClub(League league, Club checkType, String name, String code) {
-        Club club2 = getClub(checkType, name, code);
-        league.getClubs().add(club2);
+        if(loadClubByName(league,name) != null && loadClubByCode(league,code) != null){
+            System.out.println("There is a club with this name or code");
+        } else{
+            Club club2 = getClub(checkType, name, code);
+            league.getClubs().add(club2);
+        }
     }
 
-    public Club loadClub(League league, String name) {
+    public Club loadClubByName(League league, String name) {
         for (Club club : league.getClubs().getClubs()) {
-            if(club != null){
+            if (club != null) {
                 if (Objects.equals(club.getName(), name)) {
                     return club;
                 }
@@ -24,11 +27,38 @@ public class UserService {
         return null;
     }
 
-    public void deleteClub(League league, String name) {
+    public Club loadClubByCode(League league, String code) {
         for (Club club : league.getClubs().getClubs()) {
-            if (Objects.equals(club.getName(), name)) {
-                league.getClubs().remove(name);
-                break;
+            if (club != null) {
+                if (Objects.equals(club.getCode(), code)) {
+                    return club;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void showTable(League league) {
+        if(league.getClubs().getClubs()[0] == null){
+            System.out.println("This league does not have any clubs yet");
+        } else{
+            for (Club club : league.getClubs().getClubs()) {
+                if (club != null)
+                    System.out.println(club);
+                else break;
+            }
+        }
+    }
+
+    public void deleteClub(League league, String name) {
+        if(loadClubByName(league,name) == null){
+            System.out.println("There is no club with this profile");
+        } else{
+            for (Club club : league.getClubs().getClubs()) {
+                if (Objects.equals(club.getName(), name)) {
+                    league.getClubs().remove(name);
+                    break;
+                }
             }
         }
     }
