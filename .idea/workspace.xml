@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add exception handling for user service and user methods">
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="update exception handling and sort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <workItem from="1659171865256" duration="20858000" />
       <workItem from="1659251171113" duration="4871000" />
       <workItem from="1659301097780" duration="4729000" />
-      <workItem from="1659341726336" duration="13181000" />
+      <workItem from="1659341726336" duration="13485000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -191,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659353953204</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update exception handling and sort">
+      <created>1659358578319</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1659358578319</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +234,7 @@
     <MESSAGE value="fix bugs 1" />
     <MESSAGE value="add exception handling for leagues menu" />
     <MESSAGE value="add exception handling for user service and user methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add exception handling for user service and user methods" />
+    <MESSAGE value="update exception handling and sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="update exception handling and sort" />
   </component>
 </project>

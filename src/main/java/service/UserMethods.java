@@ -92,12 +92,12 @@ public class UserMethods {
 
     private void volleyballGameMods(League league, Club clubOne, Club clubTwo, String result) {
         if (Objects.equals(result, "yes")) {
-            System.out.print("How many sets did " + clubTwo + "'s club win?");
+            System.out.print("How many sets did " + clubTwo.getName() + "'s club win?");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
             ((VolleyballClub) clubTwo).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
         } else {
-            System.out.print("How many sets did " + clubOne + "'s club win?");
+            System.out.print("How many sets did " + clubOne.getName() + "'s club win?");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
             ((VolleyballClub) clubOne).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
