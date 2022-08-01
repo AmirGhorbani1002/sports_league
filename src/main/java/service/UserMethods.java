@@ -19,19 +19,26 @@ public class UserMethods {
     }
 
     public void showClub(League league) {
-        System.out.print("Enter the name of the club you want to see: ");
-        ApplicationObjects.getScanner().nextLine();
-        String name = ApplicationObjects.getScanner().nextLine();
-        if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
-            System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
-        else{
-            System.out.println("There is no club with this profile");
+        if (league.getClubs().getClubs()[0] == null) {
+            System.out.println("This league does not have any clubs yet");
+        } else {
+            System.out.print("Enter the name of the club you want to see: ");
+            ApplicationObjects.getScanner().nextLine();
+            String name = ApplicationObjects.getScanner().nextLine();
+            if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
+                System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
+            else {
+                System.out.println("There is no club with this name");
+            }
         }
+
     }
 
     public void addClub(League league, Club checkType) {
         ApplicationObjects.getScanner().nextLine();
+        System.out.print("Enter the name of your club: ");
         String name = ApplicationObjects.getScanner().nextLine();
+        System.out.print("Enter the code of your club: ");
         String code = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().saveClub(league, checkType, name, code);
     }
@@ -43,14 +50,32 @@ public class UserMethods {
     }
 
     public void addGame(League league, Club checkType) {
-        System.out.print("Enter the name of first club: ");
-        ApplicationObjects.getScanner().nextLine();
-        String nameOne = ApplicationObjects.getScanner().nextLine();
+        if (league.getClubs().getClubs()[0] == null || league.getClubs().getClubs()[1] == null) {
+            System.out.println("This league does not have enough clubs for game yet");
+        } else {
+            while (true) {
+                System.out.print("Enter the name of first club: ");
+                ApplicationObjects.getScanner().nextLine();
+                String nameOne = ApplicationObjects.getScanner().nextLine();
+                Club clubOne = getClub(league, nameOne);
+                if (clubOne == null) continue;
+                System.out.print("Enter the name of second club: ");
+                String nameTwo = ApplicationObjects.getScanner().nextLine();
+                Club clubTwo = getClub(league, nameTwo);
+                if (clubTwo == null) continue;
+                gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
+                break;
+            }
+        }
+    }
+
+    private Club getClub(League league, String nameOne) {
         Club clubOne = ApplicationObjects.getUserService().loadClubByName(league, nameOne);
-        System.out.print("Enter the name of second club: ");
-        String nameTwo = ApplicationObjects.getScanner().nextLine();
-        Club clubTwo = ApplicationObjects.getUserService().loadClubByName(league, nameTwo);
-        gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
+        if (clubOne == null) {
+            System.out.println("There is no club with this name");
+            return null;
+        }
+        return clubOne;
     }
 
     private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) {
