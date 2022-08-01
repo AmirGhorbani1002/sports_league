@@ -44,31 +44,41 @@ public class UserMethods {
         System.out.print("Enter the name of second club: ");
         String nameTwo = ApplicationObjects.getScanner().nextLine();
         Club clubTwo = ApplicationObjects.getUserService().loadClub(league, nameTwo);
+        gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
+    }
+
+    private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) {
         if (checkType instanceof SoccerClub) {
             System.out.print("Did " + nameOne + " club win? (Enter yes or no or draw)");
             String result = ApplicationObjects.getScanner().next();
-            if (Objects.equals(result, "yes"))
-                ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
-            else if (Objects.equals(result, "no"))
-                ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
-            else
-                ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.DRAW);
+            soccerGameMods(league, clubOne, clubTwo, result);
         } else {
             System.out.print("Did " + nameOne + " club win? (Enter yes or no)");
             String result = ApplicationObjects.getScanner().next();
-            if (Objects.equals(result, "yes")) {
-                System.out.print("How many sets did " + clubTwo + "'s club win?");
-                String numberOfWinSet = ApplicationObjects.getScanner().next();
-                ((VolleyballClub) clubTwo).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
-                ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
-            } else {
-                System.out.print("How many sets did " + clubOne + "'s club win?");
-                String numberOfWinSet = ApplicationObjects.getScanner().next();
-                ((VolleyballClub) clubOne).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
-                ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
-            }
-
+            volleyballGameMods(league, clubOne, clubTwo, result);
         }
     }
 
+    private void volleyballGameMods(League league, Club clubOne, Club clubTwo, String result) {
+        if (Objects.equals(result, "yes")) {
+            System.out.print("How many sets did " + clubTwo + "'s club win?");
+            String numberOfWinSet = ApplicationObjects.getScanner().next();
+            ((VolleyballClub) clubTwo).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
+            ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
+        } else {
+            System.out.print("How many sets did " + clubOne + "'s club win?");
+            String numberOfWinSet = ApplicationObjects.getScanner().next();
+            ((VolleyballClub) clubOne).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
+            ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
+        }
+    }
+
+    private void soccerGameMods(League league, Club clubOne, Club clubTwo, String result) {
+        if (Objects.equals(result, "yes"))
+            ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
+        else if (Objects.equals(result, "no"))
+            ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
+        else
+            ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.DRAW);
+    }
 }
