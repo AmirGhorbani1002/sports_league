@@ -6,7 +6,7 @@ import object.ApplicationObjects;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class League {
+public class Leagues {
 
     public static void showMenu(entity.League league, Club checkType) throws SQLException {
         while (true) {

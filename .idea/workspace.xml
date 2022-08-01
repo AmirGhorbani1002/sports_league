@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor user methods">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="exception handling for our leagues menu">
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/Leagues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/OurLeagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/OurLeagues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1659171865256" duration="20858000" />
       <workItem from="1659251171113" duration="4871000" />
       <workItem from="1659301097780" duration="4729000" />
-      <workItem from="1659341726336" duration="9042000" />
+      <workItem from="1659341726336" duration="9368000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -158,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659350677739</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="complete">
+      <created>1659352562687</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659352562687</updated>
+    </task>
+    <task id="LOCAL-00014" summary="exception handling for our leagues menu">
+      <created>1659352829146</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659352829146</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +200,8 @@
     <MESSAGE value="refactor code and delete database and add sort" />
     <MESSAGE value="add user methods" />
     <MESSAGE value="refactor user methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor user methods" />
+    <MESSAGE value="complete" />
+    <MESSAGE value="exception handling for our leagues menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling for our leagues menu" />
   </component>
 </project>

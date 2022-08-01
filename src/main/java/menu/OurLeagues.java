@@ -18,9 +18,9 @@ public class OurLeagues {
             System.out.print("Choose one of our league: ");
             String input = ApplicationObjects.getScanner().next();
             if (Objects.equals(input, "1")) {
-                League.showMenu(ApplicationObjects.getPersianSoccerClubPremier(), new SoccerClub("a","a"));
+                Leagues.showMenu(ApplicationObjects.getPersianSoccerClubPremier(), new SoccerClub("a","a"));
             } else if(Objects.equals(input, "2")){
-                League.showMenu(ApplicationObjects.getPersianVolleyballClubPremier(), new VolleyballClub("a","a"));
+                Leagues.showMenu(ApplicationObjects.getPersianVolleyballClubPremier(), new VolleyballClub("a","a"));
             } else if(Objects.equals(input, "3")){
                 break;
             } else{
