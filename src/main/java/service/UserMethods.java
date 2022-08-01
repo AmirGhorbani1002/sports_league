@@ -78,11 +78,11 @@ public class UserMethods {
 
     private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) {
         if (checkType instanceof SoccerClub) {
-            System.out.print("Did " + nameOne + " club win? (Enter yes or no or draw)");
+            System.out.print("Did " + nameOne + " club win? (Enter yes or no or draw) ");
             String result = ApplicationObjects.getScanner().next();
             soccerGameMods(league, clubOne, clubTwo, result);
         } else {
-            System.out.print("Did " + nameOne + " club win? (Enter yes or no)");
+            System.out.print("Did " + nameOne + " club win? (Enter yes or no) ");
             String result = ApplicationObjects.getScanner().next();
             volleyballGameMods(league, clubOne, clubTwo, result);
         }
@@ -90,13 +90,15 @@ public class UserMethods {
 
     private void volleyballGameMods(League league, Club clubOne, Club clubTwo, String result) {
         if (Objects.equals(result, "yes")) {
-            System.out.print("How many sets did " + clubTwo.getName() + "'s club win?");
+            System.out.print("How many sets did " + clubTwo.getName() + "'s club win? ");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
+            numberOfWinSet = Check.checkSet(numberOfWinSet);
             ((VolleyballClub) clubTwo).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
         } else {
-            System.out.print("How many sets did " + clubOne.getName() + "'s club win?");
+            System.out.print("How many sets did " + clubOne.getName() + "'s club win? ");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
+            numberOfWinSet = Check.checkSet(numberOfWinSet);
             ((VolleyballClub) clubOne).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
         }

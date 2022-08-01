@@ -9,7 +9,7 @@ import java.util.Objects;
 public class UserService {
 
     public void saveClub(League league, Club checkType, String name, String code) {
-        if(loadClubByName(league,name) != null && loadClubByCode(league,code) != null){
+        if(loadClubByName(league,name) != null || loadClubByCode(league,code) != null){
             Check.printMessage("There is a club with this name or code");
         } else{
             Club club2 = getClub(checkType, name, code);
