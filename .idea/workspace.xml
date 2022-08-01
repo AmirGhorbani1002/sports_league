@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add user methods">
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor user methods">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +72,7 @@
       <workItem from="1659171865256" duration="20858000" />
       <workItem from="1659251171113" duration="4871000" />
       <workItem from="1659301097780" duration="4729000" />
-      <workItem from="1659341726336" duration="7040000" />
+      <workItem from="1659341726336" duration="9042000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -148,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659350246167</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="refactor user methods">
+      <created>1659350677739</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659350677739</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +187,7 @@
     <MESSAGE value="add save and load service" />
     <MESSAGE value="refactor code and delete database and add sort" />
     <MESSAGE value="add user methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add user methods" />
+    <MESSAGE value="refactor user methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor user methods" />
   </component>
 </project>

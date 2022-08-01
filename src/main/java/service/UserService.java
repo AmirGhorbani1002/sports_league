@@ -15,8 +15,10 @@ public class UserService {
 
     public Club loadClub(League league, String name) {
         for (Club club : league.getClubs().getClubs()) {
-            if (Objects.equals(club.getName(), name)) {
-                return club;
+            if(club != null){
+                if (Objects.equals(club.getName(), name)) {
+                    return club;
+                }
             }
         }
         return null;

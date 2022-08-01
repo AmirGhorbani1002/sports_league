@@ -13,32 +13,38 @@ import java.util.Objects;
 
 public class UserMethods {
 
-    public void showTable(League league){
+    public void showTable(League league) {
         Arrays.sort(league.getClubs().getClubs(), new ClubListSortByScore());
-        for (Club club1 : league.getClubs().getClubs())
-            System.out.println(club1);
+        for (Club club : league.getClubs().getClubs()) {
+            if (club != null)
+                System.out.println(club);
+            else break;
+        }
     }
 
-    public void showClub(League league){
+    public void showClub(League league) {
         System.out.print("Enter the name of the club you want to see: ");
+        ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
         System.out.println(ApplicationObjects.getUserService().loadClub(league, name));
     }
 
-    public void addClub(League league,Club checkType){
+    public void addClub(League league, Club checkType) {
         ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
         String code = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().saveClub(league, checkType, name, code);
     }
 
-    public void deleteClub(League league){
+    public void deleteClub(League league) {
+        ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().deleteClub(league, name);
     }
 
-    public void addGame(League league,Club checkType){
+    public void addGame(League league, Club checkType) {
         System.out.print("Enter the name of first club: ");
+        ApplicationObjects.getScanner().nextLine();
         String nameOne = ApplicationObjects.getScanner().nextLine();
         Club clubOne = ApplicationObjects.getUserService().loadClub(league, nameOne);
         System.out.print("Enter the name of second club: ");
