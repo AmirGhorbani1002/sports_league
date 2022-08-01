@@ -3,12 +3,11 @@ package menu;
 import entity.Club;
 import object.ApplicationObjects;
 
-import java.sql.SQLException;
 import java.util.Objects;
 
 public class Leagues {
 
-    public static void showMenu(entity.League league, Club checkType) throws SQLException {
+    public static void showMenu(entity.League league, Club checkType) {
         while (true) {
             System.out.println("1) View table");
             System.out.println("2) View information about a club");
@@ -30,6 +29,8 @@ public class Leagues {
                 ApplicationObjects.getUserMethods().addGame(league, checkType);
             } else if (Objects.equals(input, "6")) {
                 break;
+            } else {
+                System.out.println("Wrong input");
             }
         }
     }
