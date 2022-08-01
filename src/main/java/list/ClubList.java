@@ -2,11 +2,9 @@ package list;
 
 import entity.Club;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Objects;
+import java.util.*;
 
-public class ClubList implements Comparator<Club> {
+public class ClubList {
 
     private Club[] clubs = new Club[1000];
     private int index = 0;
@@ -46,10 +44,7 @@ public class ClubList implements Comparator<Club> {
             System.arraycopy(clubs, i + 1, clubs, i, index - i);
     }
 
-    public void remove(Club club) {}
-
-    @Override
-    public int compare(Club c1, Club c2) {
-        return c1.getScore() - c2.getScore();
+    public void remove(Club club) {
     }
+
 }
