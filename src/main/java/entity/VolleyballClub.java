@@ -3,7 +3,6 @@ package entity;
 public class VolleyballClub extends Club {
 
     private int numberOfWinningSets;
-    private int numberOfLosingSets;
 
     public VolleyballClub(String name, String code) {
         super(name, 6, code);
@@ -14,14 +13,6 @@ public class VolleyballClub extends Club {
 
     public void setNumberOfWinningSets(int numberOfWinningSets) {
         this.numberOfWinningSets = numberOfWinningSets;
-    }
-
-    public int getNumberOfLosingSets() {
-        return numberOfLosingSets;
-    }
-
-    public void setNumberOfLosingSets(int numberOfLosingSets) {
-        this.numberOfLosingSets = numberOfLosingSets;
     }
 
     @Override

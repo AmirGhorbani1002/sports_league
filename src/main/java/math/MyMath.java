@@ -32,7 +32,7 @@ public class MyMath {
     public static void calculateVolleyballScore(Club clubOne, Club clubTwo, GameResult result) {
         if (result == GameResult.WIN) {
             calculateNumberOfWinOrLose(clubOne, clubTwo);
-            if (((VolleyballClub) clubTwo).getNumberOfLosingSets() == 2) {
+            if (((VolleyballClub) clubTwo).getNumberOfWinningSets() == 2) {
                 addScore(clubTwo, 1);
                 addScore(clubOne, 2);
             } else {
@@ -40,7 +40,7 @@ public class MyMath {
             }
         } else if (result == GameResult.LOSS) {
             calculateNumberOfWinOrLose(clubTwo, clubOne);
-            if (((VolleyballClub) clubOne).getNumberOfLosingSets() == 2) {
+            if (((VolleyballClub) clubOne).getNumberOfWinningSets() == 2) {
                 addScore(clubOne, 1);
                 addScore(clubTwo, 2);
             } else {

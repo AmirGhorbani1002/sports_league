@@ -31,11 +31,10 @@ public class ClubList {
         index++;
     }
 
-    public void remove(String code) {
+    public void remove(String name) {
         int i = 0;
         for (Club club : clubs) {
-            if (Objects.equals(club.getCode(), code)) {
-                club = null;
+            if (Objects.equals(club.getName(), name)) {
                 break;
             }
             i++;

@@ -2,7 +2,10 @@ package menu;
 
 import entity.Club;
 import entity.League;
-import list.ClubListSortByScore;
+import entity.SoccerClub;
+import entity.VolleyballClub;
+import enums.GameResult;
+import list.sort.ClubListSortByScore;
 import object.ApplicationObjects;
 
 import java.sql.SQLException;
@@ -11,7 +14,7 @@ import java.util.Objects;
 
 public class LeaguesMenu {
 
-    public static void showMenu(League league, Club club) throws SQLException {
+    public static void showMenu(League league, Club checkType) throws SQLException {
         while (true) {
             System.out.println("1) View table");
             System.out.println("2) View information about a club");
@@ -22,22 +25,18 @@ public class LeaguesMenu {
             System.out.print("Choose on of the items: ");
             String input = ApplicationObjects.getScanner().next();
             if (Objects.equals(input, "1")) {
-                Arrays.sort(league.getClubs().getClubs(),new ClubListSortByScore());
-                for (Club club1 : league.getClubs().getClubs())
-                    System.out.println(club1);
+                ApplicationObjects.getUserMethods().showTable(league);
             } else if (Objects.equals(input, "2")) {
-
+                ApplicationObjects.getUserMethods().showClub(league);
             } else if (Objects.equals(input, "3")) {
-                ApplicationObjects.getUserService().addClub(league, club);
+                ApplicationObjects.getUserMethods().addClub(league, checkType);
             } else if (Objects.equals(input, "4")) {
-
+                ApplicationObjects.getUserMethods().deleteClub(league);
             } else if (Objects.equals(input, "5")) {
-
+                ApplicationObjects.getUserMethods().addGame(league, checkType);
             } else if (Objects.equals(input, "6")) {
                 break;
             }
         }
-
     }
-
 }
