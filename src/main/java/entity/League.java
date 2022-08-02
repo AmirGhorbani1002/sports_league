@@ -2,16 +2,13 @@ package entity;
 
 import list.ClubList;
 
-import java.util.Comparator;
-
 public class League {
 
-    private ClubList clubs;
+    private final ClubList clubs;
+    private final String name;
 
-    public League() {
-    }
-
-    public League(ClubList clubs) {
+    public League(String name,ClubList clubs) {
+        this.name = name;
         this.clubs = clubs;
     }
 
@@ -19,8 +16,8 @@ public class League {
         return clubs;
     }
 
-    public void setClubs(ClubList clubs) {
-        this.clubs = clubs;
+    public String getName() {
+        return name;
     }
 
     @Override

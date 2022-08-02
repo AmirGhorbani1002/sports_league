@@ -1,4 +1,4 @@
-import menu.OurLeagues;
+import view.OurLeagues;
 
 import java.sql.SQLException;
 

@@ -9,6 +9,7 @@ import enums.GameResult;
 import list.sort.ClubListSortByScore;
 import object.ApplicationObjects;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -35,7 +36,7 @@ public class UserMethods {
 
     }
 
-    public void addClub(League league, Club checkType) {
+    public void addClub(League league, Club checkType) throws SQLException {
         ApplicationObjects.getScanner().nextLine();
         System.out.print("Enter the name of your club: ");
         String name = ApplicationObjects.getScanner().nextLine();
@@ -50,7 +51,7 @@ public class UserMethods {
         ApplicationObjects.getUserService().deleteClub(league, name);
     }
 
-    public void addGame(League league, Club checkType) {
+    public void addGame(League league, Club checkType) throws SQLException {
         if (league.getClubs().getClubs()[0] == null || league.getClubs().getClubs()[1] == null) {
             Check.printMessage("This league does not have enough clubs for game yet");
         } else {
@@ -76,7 +77,7 @@ public class UserMethods {
         return club;
     }
 
-    private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) {
+    private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) throws SQLException {
         if (checkType instanceof SoccerClub) {
             System.out.print("Did " + nameOne + " club win? (Enter yes or no or draw) ");
             String result = ApplicationObjects.getScanner().next();
@@ -88,7 +89,7 @@ public class UserMethods {
         }
     }
 
-    private void volleyballGameMods(League league, Club clubOne, Club clubTwo, String result) {
+    private void volleyballGameMods(League league, Club clubOne, Club clubTwo, String result) throws SQLException {
         if (Objects.equals(result, "yes")) {
             System.out.print("How many sets did " + clubTwo.getName() + "'s club win? ");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
@@ -104,7 +105,7 @@ public class UserMethods {
         }
     }
 
-    private void soccerGameMods(League league, Club clubOne, Club clubTwo, String result) {
+    private void soccerGameMods(League league, Club clubOne, Club clubTwo, String result) throws SQLException {
         if (Objects.equals(result, "yes"))
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
         else if (Objects.equals(result, "no"))

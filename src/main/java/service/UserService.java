@@ -3,17 +3,23 @@ package service;
 import check.Check;
 import entity.*;
 import enums.GameResult;
+import object.ApplicationObjects;
+import org.postgresql.plugin.AuthenticationPlugin;
+import repository.LeagueRepository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class UserService {
 
-    public void saveClub(League league, Club checkType, String name, String code) {
+    public void saveClub(League league, Club checkType, String name, String code) throws SQLException {
         if(loadClubByName(league,name) != null || loadClubByCode(league,code) != null){
             Check.printMessage("There is a club with this name or code");
         } else{
             Club club2 = getClub(checkType, name, code);
             league.getClubs().add(club2);
+            saveLeague(league,checkType);
         }
     }
 
@@ -37,6 +43,28 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public void loadLeague(League league,Club checkType) throws SQLException {
+        ResultSet resultSet = ApplicationObjects.getLeagueRepository().load(league);
+        if(resultSet.next()){
+            String temp = resultSet.getString("clubs");
+            if(checkType instanceof SoccerClub)
+                ApplicationObjects.getClubToString().stringToSoccerClubs(league,temp);
+            else
+                ApplicationObjects.getClubToString().stringToVolleyballClubs(league,temp);
+        }else{
+            ApplicationObjects.getClubToString().stringToSoccerClubs(league,"");
+        }
+    }
+
+    public void saveLeague(League league,Club checkType) throws SQLException {
+        String clubs;
+        if(checkType instanceof SoccerClub)
+            clubs = ApplicationObjects.getClubToString().soccerClubsToString(league.getClubs());
+        else
+            clubs = ApplicationObjects.getClubToString().volleyballClubsToString(league.getClubs());
+        ApplicationObjects.getLeagueRepository().updateClubs(league,clubs);
     }
 
     public void showTable(League league) {
@@ -64,9 +92,10 @@ public class UserService {
         }
     }
 
-    public void addGame(League league, Club clubOne, Club clubTwo, GameResult result) {
+    public void addGame(League league, Club clubOne, Club clubTwo, GameResult result) throws SQLException {
         Game game = new Game(clubOne, clubTwo, result);
         scoreCalculate(clubOne, game);
+        saveLeague(league,clubOne);
     }
 
     private void scoreCalculate(Club clubOne, Game game) {

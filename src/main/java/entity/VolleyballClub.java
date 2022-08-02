@@ -4,8 +4,8 @@ public class VolleyballClub extends Club {
 
     private int numberOfWinningSets;
 
-    public VolleyballClub(String name, String code) {
-        super(name, 6, code);
+    public VolleyballClub(String code, String name) {
+        super(code, 6, name);
     }
     public int getNumberOfWinningSets() {
         return numberOfWinningSets;

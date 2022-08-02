@@ -43,6 +43,9 @@ public class ClubList {
             System.arraycopy(clubs, i + 1, clubs, i, index - i);
     }
 
+    public void soccerClubToString(){
+
+    }
     public void remove(Club club) {
     }
 

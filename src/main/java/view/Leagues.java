@@ -1,14 +1,15 @@
-package menu;
+package view;
 
 import check.Check;
 import entity.Club;
 import object.ApplicationObjects;
 
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class Leagues {
 
-    public static void showMenu(entity.League league, Club checkType) {
+    public static void showMenu(entity.League league, Club checkType) throws SQLException {
         while (true) {
             System.out.println("1) View table");
             System.out.println("2) View information about a club");

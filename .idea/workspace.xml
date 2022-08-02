@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add class check and refactor code">
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add check set and fix bugs 3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/DBConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/ClubsToString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/League.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/VolleyballClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/list/ClubList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/Leagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Leagues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/OurLeagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OurLeagues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
     </list>
@@ -35,18 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -72,7 +84,21 @@
       <workItem from="1659171865256" duration="20858000" />
       <workItem from="1659251171113" duration="4871000" />
       <workItem from="1659301097780" duration="4729000" />
-      <workItem from="1659341726336" duration="15293000" />
+      <workItem from="1659341726336" duration="22128000" />
+      <workItem from="1659385287426" duration="628000" />
+      <workItem from="1659423794775" duration="1797000" />
+      <workItem from="1659428385446" duration="914000" />
+      <workItem from="1659431348309" duration="1836000" />
+      <workItem from="1659445599178" duration="807000" />
+      <workItem from="1659451175370" duration="7000" />
+      <workItem from="1659451452888" duration="6000" />
+      <workItem from="1659451529510" duration="6000" />
+      <workItem from="1659451728972" duration="13000" />
+      <workItem from="1659452077835" duration="11000" />
+      <workItem from="1659452984532" duration="5000" />
+      <workItem from="1659453327957" duration="15000" />
+      <workItem from="1659454013672" duration="21000" />
+      <workItem from="1659467672903" duration="3534000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -214,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659359361095</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="add check set and fix bugs 3">
+      <created>1659360404396</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1659360404396</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +285,7 @@
     <MESSAGE value="update exception handling and sort" />
     <MESSAGE value="fix bugs 2" />
     <MESSAGE value="add class check and refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add class check and refactor code" />
+    <MESSAGE value="add check set and fix bugs 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="add check set and fix bugs 3" />
   </component>
 </project>

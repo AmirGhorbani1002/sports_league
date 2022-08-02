@@ -16,7 +16,7 @@ public abstract class Club {
     private int numberOfWins;
     private int numberOFLosses;
 
-    public Club(String name, int numberOfPlayers, String code) {
+    public Club(String code, int numberOfPlayers, String name) {
         this.name = name;
         this.numberOfPlayers = numberOfPlayers;
         this.code = code;

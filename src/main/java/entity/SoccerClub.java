@@ -5,8 +5,8 @@ public class SoccerClub extends Club{
 
     private int numberOfDraws;
 
-    public SoccerClub(String name, String code) {
-        super(name, 11, code);
+    public SoccerClub(String code, String name) {
+        super(code, 11, name);
         numberOfDraws = 0;
     }
     public int getNumberOfDraws() {
