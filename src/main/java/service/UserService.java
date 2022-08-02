@@ -4,8 +4,6 @@ import check.Check;
 import entity.*;
 import enums.GameResult;
 import object.ApplicationObjects;
-import org.postgresql.plugin.AuthenticationPlugin;
-import repository.LeagueRepository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

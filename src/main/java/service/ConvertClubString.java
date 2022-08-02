@@ -6,7 +6,7 @@ import entity.SoccerClub;
 import entity.VolleyballClub;
 import list.ClubList;
 
-public class ClubsToString {
+public class ConvertClubString {
 
     public String soccerClubsToString(ClubList clubs) {
         String temp = "";

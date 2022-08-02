@@ -1,5 +1,6 @@
 package check;
 
+import entity.Club;
 import object.ApplicationObjects;
 
 import java.util.Objects;
@@ -27,6 +28,10 @@ public class Check {
                 set = ApplicationObjects.getScanner().next();
             }
         }
+    }
+
+    public static boolean checkSameClubForGame(Club clubOne, Club clubTwo){
+        return clubOne.equals(clubTwo);
     }
 
     private static void pressEnter() {

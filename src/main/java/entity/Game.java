@@ -1,5 +1,6 @@
 package entity;
 
+import check.Check;
 import enums.GameResult;
 import math.MyMath;
 

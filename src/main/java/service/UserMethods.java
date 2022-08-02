@@ -64,6 +64,10 @@ public class UserMethods {
             String nameTwo = ApplicationObjects.getScanner().nextLine();
             Club clubTwo = getClub(league, nameTwo);
             if (clubTwo == null) return;
+            if(Check.checkSameClubForGame(clubOne,clubTwo)){
+                System.out.println("A club cannot play with itself!!!");
+                return;
+            }
             gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
         }
     }

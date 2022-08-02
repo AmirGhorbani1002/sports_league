@@ -4,7 +4,7 @@ import config.DBConfig;
 import entity.League;
 import list.ClubList;
 import repository.LeagueRepository;
-import service.ClubsToString;
+import service.ConvertClubString;
 import service.UserMethods;
 import service.UserService;
 
@@ -23,7 +23,7 @@ public class ApplicationObjects {
     private static final UserMethods userMethods = new UserMethods();
     private static final Connection connection = DBConfig.getConnection();
     private static final LeagueRepository leagueRepository = new LeagueRepository();
-    private static final ClubsToString clubToString = new ClubsToString();
+    private static final ConvertClubString clubToString = new ConvertClubString();
 
     private ApplicationObjects() {
     }
@@ -59,7 +59,7 @@ public class ApplicationObjects {
         return leagueRepository;
     }
 
-    public static ClubsToString getClubToString() {
+    public static ConvertClubString getClubToString() {
         return clubToString;
     }
 }
