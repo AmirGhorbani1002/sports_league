@@ -9,14 +9,18 @@ import java.sql.SQLException;
 
 public class LeagueRepository {
 
-    public ResultSet load(League league) throws SQLException {
+    public String load(League league) throws SQLException {
         String query = """
                 select * from league
                 where name = ?;
                 """;
         PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
         preparedStatement.setString(1,league.getName());
-        return preparedStatement.executeQuery();
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next())
+            return resultSet.getString("clubs");
+        else
+            return "";
     }
 
     public void save(String clubs) throws SQLException {

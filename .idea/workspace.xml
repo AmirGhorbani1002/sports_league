@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add database and refactor code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ClubsToString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ConvertClubString.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add check for same club have game">
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Leagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Leagues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/OurLeagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OurLeagues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +86,7 @@
       <workItem from="1659453327957" duration="15000" />
       <workItem from="1659454013672" duration="21000" />
       <workItem from="1659467672903" duration="3534000" />
-      <workItem from="1659471402212" duration="1009000" />
+      <workItem from="1659471402212" duration="2039000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -249,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659471429004</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add check for same club have game">
+      <created>1659472643887</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1659472643887</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,17 +289,7 @@
     <MESSAGE value="add class check and refactor code" />
     <MESSAGE value="add check set and fix bugs 3" />
     <MESSAGE value="add database and refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add database and refactor code" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/entity/Game.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="add check for same club have game" />
+    <option name="LAST_COMMIT_MESSAGE" value="add check for same club have game" />
   </component>
 </project>
