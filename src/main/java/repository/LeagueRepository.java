@@ -6,10 +6,11 @@ import object.ApplicationObjects;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LeagueRepository {
 
-    public String load(League league) throws SQLException {
+    /*public String load(League league) throws SQLException {
         String query = """
                 select * from league
                 where name = ?;
@@ -21,6 +22,22 @@ public class LeagueRepository {
             return resultSet.getString("clubs");
         else
             return "";
+    }*/
+
+    public String[] load() throws SQLException{
+        String[] temp = new String[1000];
+        int i = 0;
+        String query = """
+                select * from league;
+                """;
+        Statement statement = ApplicationObjects.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while(resultSet.next()){
+            temp[i++] = resultSet.getString("name");
+            temp[i++] = resultSet.getString("clubs");
+            temp[i++] = resultSet.getString("club_type");
+        }
+        return temp;
     }
 
     public void save(String clubs) throws SQLException {

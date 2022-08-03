@@ -1,13 +1,13 @@
 package entity;
 
-import list.ClubList;
+import util.ClubList;
 
 public class League {
 
-    private final ClubList clubs;
-    private final String name;
+    private ClubList clubs;
+    private String name;
 
-    public League(String name,ClubList clubs) {
+    public League(String name, ClubList clubs) {
         this.name = name;
         this.clubs = clubs;
     }
@@ -20,8 +20,16 @@ public class League {
         return name;
     }
 
+    public void setClubs(ClubList clubs) {
+        this.clubs = clubs;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return null;
     }
 

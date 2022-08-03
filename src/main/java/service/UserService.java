@@ -4,14 +4,17 @@ import check.Check;
 import entity.*;
 import enums.GameResult;
 import object.ApplicationObjects;
+import util.ClubList;
+import util.LeagueList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class UserService {
 
-    public void saveClub(League league, Club checkType, String name, String code) throws SQLException {
+    public void saveClub(League league, String checkType, String name, String code) throws SQLException {
         if (loadClubByName(league, name) != null || loadClubByCode(league, code) != null) {
             Check.printMessage("There is a club with this name or code");
         } else {
@@ -43,12 +46,40 @@ public class UserService {
         return null;
     }
 
-    public void loadLeague(League league, Club checkType) throws SQLException {
+    /*public void loadLeague(League league, Club checkType) throws SQLException {
         String temp = ApplicationObjects.getLeagueRepository().load(league);
         if (checkType instanceof SoccerClub)
             ApplicationObjects.getClubToString().stringToSoccerClubs(league, temp);
         else
             ApplicationObjects.getClubToString().stringToVolleyballClubs(league, temp);
+    }*/
+
+    public String[] loadAllLeagues() throws SQLException {
+        String[] information = ApplicationObjects.getLeagueRepository().load();
+        String[] type = new String[1000];
+        ApplicationObjects.getLeagueList().setIndex(0);
+        int typeIndex = 0;
+        for (int i = 0; i < information.length; i += 3) {
+            type[typeIndex++] = information[i + 2];
+            if (information[i] != null) {
+                League league;
+                if (Objects.equals(information[i + 2], "soccer"))
+                    league = new League(information[i], ApplicationObjects.getClubToString().stringToSoccerClubs(information[i + 1]));
+                else
+                    league = new League(information[i], ApplicationObjects.getClubToString().stringToVolleyballClubs(information[i + 1]));
+                ApplicationObjects.getLeagueList().add(league);
+            } else break;
+        }
+        return type;
+    }
+
+    public void saveLeague(League league, String checkType) throws SQLException {
+        String clubs;
+        if (Objects.equals(checkType, "soccer"))
+            clubs = ApplicationObjects.getClubToString().soccerClubsToString(league.getClubs());
+        else
+            clubs = ApplicationObjects.getClubToString().volleyballClubsToString(league.getClubs());
+        ApplicationObjects.getLeagueRepository().updateClubs(league, clubs);
     }
 
     public void saveLeague(League league, Club checkType) throws SQLException {
@@ -98,8 +129,8 @@ public class UserService {
             game.volleyballScoreCalculation();
     }
 
-    private Club getClub(Club club, String name, String code) {
-        if (club instanceof SoccerClub)
+    private Club getClub(String checkType, String name, String code) {
+        if (Objects.equals(checkType, "soccer"))
             return new SoccerClub(name, code);
         else
             return new VolleyballClub(name, code);

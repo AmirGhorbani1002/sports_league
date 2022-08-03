@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Leagues {
 
-    public void showMenu(entity.League league, Club checkType) throws SQLException {
+    public void showMenu(entity.League league, String checkType) throws SQLException {
         while (true) {
             System.out.println("1) View table");
             System.out.println("2) View information about a club");

@@ -1,10 +1,8 @@
-package service;
+package util;
 
 import entity.Club;
-import entity.League;
 import entity.SoccerClub;
 import entity.VolleyballClub;
-import list.ClubList;
 
 public class ConvertClubString {
 
@@ -24,8 +22,9 @@ public class ConvertClubString {
         return temp;
     }
 
-    public void stringToSoccerClubs(League league, String clubs) {
-        String[] temp = null;
+    public ClubList stringToSoccerClubs(String clubs) {
+        String[] temp;
+        ClubList clubList = new ClubList();
         if (clubs != null) {
             temp = clubs.split("-");
             for (int i = 0; i < temp.length; i += 7) {
@@ -35,9 +34,10 @@ public class ConvertClubString {
                 soccerClub.setNumberOfDraws(Integer.parseInt(temp[i + 4]));
                 soccerClub.setNumberOFLosses(Integer.parseInt(temp[i + 5]));
                 soccerClub.setScore(Integer.parseInt(temp[i + 6]));
-                league.getClubs().add(soccerClub);
+                clubList.add(soccerClub);
             }
         }
+        return clubList;
     }
 
     public String volleyballClubsToString(ClubList clubs) {
@@ -55,8 +55,9 @@ public class ConvertClubString {
         return temp;
     }
 
-    public void stringToVolleyballClubs(League league, String clubs) {
-        String[] temp = null;
+    public ClubList stringToVolleyballClubs(String clubs) {
+        String[] temp;
+        ClubList clubList = new ClubList();
         if (clubs != null) {
             temp = clubs.split("-");
             for (int i = 0; i < temp.length; i += 6) {
@@ -65,9 +66,10 @@ public class ConvertClubString {
                 volleyballClub.setNumberOfWins(Integer.parseInt(temp[i + 3]));
                 volleyballClub.setNumberOFLosses(Integer.parseInt(temp[i + 4]));
                 volleyballClub.setScore(Integer.parseInt(temp[i + 5]));
-                league.getClubs().add(volleyballClub);
+                clubList.add(volleyballClub);
             }
         }
+        return clubList;
     }
 
 }

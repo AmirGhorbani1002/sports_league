@@ -2,23 +2,25 @@ package object;
 
 import config.DBConfig;
 import entity.League;
-import list.ClubList;
+import util.ClubList;
 import repository.LeagueRepository;
-import service.ConvertClubString;
+import util.ConvertClubString;
 import service.UserMethods;
 import service.UserService;
+import util.LeagueList;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ApplicationObjects {
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static final ClubList persianSoccerClubPremierClubs = new ClubList();
-    private static final League persianSoccerPremierLeague = new League("persianSoccerPremierLeague",persianSoccerClubPremierClubs);
+    /*private static final ClubList persianSoccerClubPremierClubs = new ClubList();
+    private static final League persianSoccerPremierLeague = new League("persianSoccerPremierLeague", persianSoccerClubPremierClubs);
     private static final ClubList persianVolleyballClubPremierClubs = new ClubList();
-    private static final League persianVolleyballPremierLeague = new League("persianVolleyballPremierLeague",persianVolleyballClubPremierClubs);
+    private static final League persianVolleyballPremierLeague = new League("persianVolleyballPremierLeague", persianVolleyballClubPremierClubs);*/
+
+    private static final LeagueList leagueList = new LeagueList();
     private static final UserService userService = new UserService();
     private static final UserMethods userMethods = new UserMethods();
     private static final Connection connection = DBConfig.getConnection();
@@ -32,15 +34,17 @@ public class ApplicationObjects {
         return scanner;
     }
 
-    public static League getPersianSoccerPremierLeague() throws SQLException {
-        /*persianSoccerPremierLeague.loadClub();*/
+    /*public static League getPersianSoccerPremierLeague() {
         return persianSoccerPremierLeague;
     }
 
 
-    public static League getPersianVolleyballPremierLeague() throws SQLException {
-        /*persianVolleyballPremierLeague.loadClub();*/
+    public static League getPersianVolleyballPremierLeague() {
         return persianVolleyballPremierLeague;
+    }*/
+
+    public static LeagueList getLeagueList() {
+        return leagueList;
     }
 
     public static UserService getUserService() {

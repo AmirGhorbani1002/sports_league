@@ -30,8 +30,16 @@ public class Check {
         }
     }
 
-    public static boolean checkSameClubForGame(Club clubOne, Club clubTwo){
+    public static boolean checkSameClubForGame(Club clubOne, Club clubTwo) {
         return clubOne.equals(clubTwo);
+    }
+
+    public static int checkLeagueExists(String input, int number) {
+        if (Pattern.matches("\\d*", input)) {
+            if (Integer.parseInt(input) <= number)
+                return Integer.parseInt(input);
+        }
+        return -1;
     }
 
     private static void pressEnter() {

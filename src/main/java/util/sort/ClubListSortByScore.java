@@ -1,4 +1,4 @@
-package list.sort;
+package util.sort;
 
 import entity.Club;
 

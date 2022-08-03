@@ -3,10 +3,9 @@ package service;
 import check.Check;
 import entity.Club;
 import entity.League;
-import entity.SoccerClub;
 import entity.VolleyballClub;
 import enums.GameResult;
-import list.sort.ClubListSortByScore;
+import util.sort.ClubListSortByScore;
 import object.ApplicationObjects;
 
 import java.sql.SQLException;
@@ -36,7 +35,7 @@ public class UserMethods {
 
     }
 
-    public void addClub(League league, Club checkType) throws SQLException {
+    public void addClub(League league, String checkType) throws SQLException {
         ApplicationObjects.getScanner().nextLine();
         System.out.print("Enter the name of your club: ");
         String name = ApplicationObjects.getScanner().nextLine();
@@ -51,7 +50,7 @@ public class UserMethods {
         ApplicationObjects.getUserService().deleteClub(league, name);
     }
 
-    public void addGame(League league, Club checkType) throws SQLException {
+    public void addGame(League league, String checkType) throws SQLException {
         if (league.getClubs().getClubs()[0] == null || league.getClubs().getClubs()[1] == null) {
             Check.printMessage("This league does not have enough clubs for game yet");
         } else {
@@ -64,7 +63,7 @@ public class UserMethods {
             String nameTwo = ApplicationObjects.getScanner().nextLine();
             Club clubTwo = getClub(league, nameTwo);
             if (clubTwo == null) return;
-            if(Check.checkSameClubForGame(clubOne,clubTwo)){
+            if (Check.checkSameClubForGame(clubOne, clubTwo)) {
                 System.out.println("A club cannot play with itself!!!");
                 return;
             }
@@ -81,8 +80,8 @@ public class UserMethods {
         return club;
     }
 
-    private void gameCalculate(League league, Club checkType, String nameOne, Club clubOne, Club clubTwo) throws SQLException {
-        if (checkType instanceof SoccerClub) {
+    private void gameCalculate(League league, String checkType, String nameOne, Club clubOne, Club clubTwo) throws SQLException {
+        if (Objects.equals(checkType, "soccer")) {
             System.out.print("Did " + nameOne + " club win? (Enter yes or no or draw) ");
             String result = ApplicationObjects.getScanner().next();
             soccerGameMods(league, clubOne, clubTwo, result);
