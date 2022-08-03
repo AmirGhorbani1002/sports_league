@@ -1,6 +1,6 @@
 package entity;
 
-import util.ClubList;
+import util.list.ClubList;
 
 public class League {
 

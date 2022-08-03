@@ -11,6 +11,7 @@ import java.sql.Statement;
 
 public class LeagueRepository {
 
+    // for load All leagues
     public String[] load() throws SQLException {
         String[] temp = new String[1000];
         int i = 0;
@@ -29,7 +30,8 @@ public class LeagueRepository {
         return temp;
     }
 
-    public boolean load(String name) throws SQLException{
+    // for load a league
+    public boolean load(String name) throws SQLException {
         String query = """
                 select * from league
                 where name = ?;
@@ -37,17 +39,18 @@ public class LeagueRepository {
         PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
         preparedStatement.setString(1, name);
         ResultSet resultSet = preparedStatement.executeQuery();
-        if(resultSet.next()){
+        if (resultSet.next()) {
             preparedStatement.close();
             resultSet.close();
             return true;
-        }else{
+        } else {
             preparedStatement.close();
             resultSet.close();
             return false;
         }
     }
 
+    // for add league
     public void save(String name, String clubType) throws SQLException {
         String query = """
                 insert into league(name, clubs, club_type)
@@ -61,6 +64,7 @@ public class LeagueRepository {
         preparedStatement.close();
     }
 
+    // for delete league
     public void delete(String name) throws SQLException {
         String query = """
                 delete from league
@@ -72,6 +76,7 @@ public class LeagueRepository {
         preparedStatement.close();
     }
 
+    // for update our clubs after game or add club or remove club ( sets all of clubs information again)
     public void updateClubs(League league, String clubs) throws SQLException {
         String query = """
                 update league

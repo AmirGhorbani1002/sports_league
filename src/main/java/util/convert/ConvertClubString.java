@@ -1,11 +1,17 @@
-package util;
+package util.convert;
 
 import entity.Club;
 import entity.SoccerClub;
 import entity.VolleyballClub;
+import util.list.ClubList;
 
 public class ConvertClubString {
 
+    /*
+    this class is for save and load our clubs
+    with '-' We connect the information of clubs for save our clubs
+    for load we split the string with split and set them to clubs
+     */
     public String soccerClubsToString(ClubList clubs) {
         String temp = "";
         for (Club club : clubs.getClubs()) {

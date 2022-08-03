@@ -12,6 +12,7 @@ public class MyMath {
         clubTwo.setNumberOfGamesPlayed(clubTwo.getNumberOfGamesPlayed() + 1);
     }
 
+    // for calculate soccer scores
     public void calculateSoccerScore(Club clubOne, Club clubTwo, GameResult result) {
         if (result == GameResult.WIN) {
             addScore(clubOne, 3);
@@ -26,6 +27,7 @@ public class MyMath {
         }
     }
 
+    // for calculate volleyball scores
     public void calculateVolleyballScore(Club clubOne, Club clubTwo, GameResult result) {
         if (result == GameResult.WIN) {
             calculateNumberOfWinOrLose(clubOne, clubTwo);

@@ -8,11 +8,13 @@ import java.util.regex.Pattern;
 
 public class Check {
 
+    // just for print message with press enter
     public void printMessage(String message) {
         System.out.println(message);
         pressEnter();
     }
 
+    // check number of sets
     public String checkSet(String set) {
         String regex = "\\d";
         while (true) {
@@ -30,10 +32,12 @@ public class Check {
         }
     }
 
+    // check a club can't have a match with itself
     public boolean checkSameClubForGame(Club clubOne, Club clubTwo) {
         return clubOne.equals(clubTwo);
     }
 
+    // check for duplicate league
     public int checkLeagueExists(String input, int number) {
         while (true){
             if (Pattern.matches("\\d*", input)) {
@@ -51,6 +55,7 @@ public class Check {
         }
     }
 
+    // check for correct our club types
     public String checkTypeClub(String type){
         while(true){
             if(Objects.equals(type.toLowerCase(), "soccer") || Objects.equals(type.toLowerCase(), "volleyball")){

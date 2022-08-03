@@ -5,7 +5,7 @@ import entity.Club;
 import entity.League;
 import entity.VolleyballClub;
 import enums.GameResult;
-import util.sort.ClubListSortByScore;
+import util.list.sort.ClubListSortByScore;
 import object.ApplicationObjects;
 
 import java.sql.SQLException;
@@ -15,6 +15,11 @@ import java.util.Objects;
 public class UserMethods {
 
     Check check = new Check();
+
+    /*
+    these methods are for giving inputs with UI and get them to our UserService
+    Their explanations are the same as those in UserService
+     */
 
     public void showTable(League league) {
         Arrays.sort(league.getClubs().getClubs(), new ClubListSortByScore());
@@ -44,7 +49,6 @@ public class UserMethods {
         System.out.print("Enter the code of your club: ");
         String code = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().saveClub(league, checkType, name, code);
-        check.printMessage("Add club done!");
     }
 
     public void deleteClub(League league) {
@@ -52,7 +56,6 @@ public class UserMethods {
         System.out.print("Enter the name of your club: ");
         String name = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().deleteClub(league, name);
-        check.printMessage("Delete club done!");
     }
 
     public void addGame(League league, String checkType) throws SQLException {
@@ -84,7 +87,6 @@ public class UserMethods {
         System.out.print("Enter the type of league's clubs: (For now we only have soccer and volleyball) ");
         String type = check.checkTypeClub(ApplicationObjects.getScanner().next());
         ApplicationObjects.getUserService().addLeague(name, type);
-        check.printMessage("Add league done!");
     }
 
     public void deleteLeague() throws SQLException {
@@ -96,7 +98,6 @@ public class UserMethods {
         String confirm = ApplicationObjects.getScanner().nextLine();
         if (Objects.equals(confirm, "confirm"))
             ApplicationObjects.getUserService().deleteLeague(name);
-        check.printMessage("Delete league done!");
     }
 
     private Club checkClub(League league, String name) {

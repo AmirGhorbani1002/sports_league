@@ -1,13 +1,11 @@
 package object;
 
 import config.DBConfig;
-import entity.League;
-import util.ClubList;
 import repository.LeagueRepository;
-import util.ConvertClubString;
+import util.convert.ConvertClubString;
 import service.UserMethods;
 import service.UserService;
-import util.LeagueList;
+import util.list.LeagueList;
 
 import java.sql.Connection;
 import java.util.Scanner;

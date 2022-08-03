@@ -1,4 +1,4 @@
-package util;
+package util.list;
 
 import entity.Club;
 

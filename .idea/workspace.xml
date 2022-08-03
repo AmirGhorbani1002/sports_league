@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor code">
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="fix bugs 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/League.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/math/MyMath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/math/MyMath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ClubList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/list/ClubList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ConvertClubString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/convert/ConvertClubString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/LeagueList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/list/LeagueList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/sort/ClubListSortByScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/list/sort/ClubListSortByScore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659533903516</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix bugs 4">
+      <created>1659537343335</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1659537343335</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +321,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor with my math" />
     <MESSAGE value="upgrade my math" />
     <MESSAGE value="add equals and hashcode to club" />
     <MESSAGE value="add database" />
@@ -331,6 +345,7 @@
     <MESSAGE value="implement add league" />
     <MESSAGE value="fix bugs 3 and implement delete league" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="fix bugs 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs 4" />
   </component>
 </project>
