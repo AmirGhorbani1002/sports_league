@@ -1,6 +1,8 @@
 package entity;
 
 
+import math.MyMath;
+
 public class SoccerClub extends Club{
 
     private int numberOfDraws;
@@ -24,5 +26,4 @@ public class SoccerClub extends Club{
                 + " | number of draws: " + getNumberOfDraws() + " | number of losses: "
                 + getNumberOFLosses() + " | score: " + getScore() + " |";
     }
-
 }

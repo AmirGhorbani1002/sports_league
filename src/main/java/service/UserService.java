@@ -115,12 +115,20 @@ public class UserService {
     }
 
     public void addLeague(String name, String type) throws SQLException {
-        ApplicationObjects.getLeagueRepository().save(name,type);
+        if(!ApplicationObjects.getLeagueRepository().load(name))
+            ApplicationObjects.getLeagueRepository().save(name,type);
+        else{
+            System.out.println("This league is available in our list");
+        }
     }
 
     public void deleteLeague(String name) throws SQLException {
-        ApplicationObjects.getLeagueRepository().delete(name);
-        ApplicationObjects.getLeagueList().remove(name);
+        if(ApplicationObjects.getLeagueRepository().load(name)){
+            ApplicationObjects.getLeagueRepository().delete(name);
+            ApplicationObjects.getLeagueList().remove(name);
+        }else{
+            System.out.println("There is no such league at the moment");
+        }
     }
 
     private void scoreCalculate(Club clubOne, Game game) {

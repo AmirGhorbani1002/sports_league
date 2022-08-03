@@ -51,6 +51,18 @@ public class Check {
         }
     }
 
+    public static String checkTypeClub(String type){
+        while(true){
+            if(Objects.equals(type.toLowerCase(), "soccer") || Objects.equals(type.toLowerCase(), "volleyball")){
+                return type;
+            } else{
+                System.out.print("We don't have this kind of club now");
+                System.out.print("Try again: ");
+                type = ApplicationObjects.getScanner().next();
+            }
+        }
+    }
+
     private static void pressEnter() {
         System.out.println("Press enter to continue");
         try {

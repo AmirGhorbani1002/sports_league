@@ -24,7 +24,28 @@ public class LeagueRepository {
             temp[i++] = resultSet.getString("clubs");
             temp[i++] = resultSet.getString("club_type");
         }
+        statement.close();
+        resultSet.close();
         return temp;
+    }
+
+    public boolean load(String name) throws SQLException{
+        String query = """
+                select * from league
+                where name = ?;
+                """;
+        PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
+        preparedStatement.setString(1, name);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next()){
+            preparedStatement.close();
+            resultSet.close();
+            return true;
+        }else{
+            preparedStatement.close();
+            resultSet.close();
+            return false;
+        }
     }
 
     public void save(String name, String clubType) throws SQLException {
@@ -37,6 +58,7 @@ public class LeagueRepository {
         preparedStatement.setString(2, null);
         preparedStatement.setString(3, clubType);
         preparedStatement.executeUpdate();
+        preparedStatement.close();
     }
 
     public void delete(String name) throws SQLException {
@@ -47,6 +69,7 @@ public class LeagueRepository {
         PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
         preparedStatement.setString(1, name);
         preparedStatement.executeUpdate();
+        preparedStatement.close();
     }
 
     public void updateClubs(League league, String clubs) throws SQLException {
@@ -59,6 +82,7 @@ public class LeagueRepository {
         preparedStatement.setString(1, clubs);
         preparedStatement.setString(2, league.getName());
         preparedStatement.executeUpdate();
+        preparedStatement.close();
     }
 
 }
