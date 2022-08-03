@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="fix bugs 3 and implement delete league">
-      <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Leagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Leagues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ClubList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659530070828</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refactor code">
+      <created>1659533903516</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1659533903516</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +306,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor code" />
     <MESSAGE value="refactor with my math" />
     <MESSAGE value="upgrade my math" />
     <MESSAGE value="add equals and hashcode to club" />
@@ -324,6 +330,7 @@
     <MESSAGE value="add league list and refactor code" />
     <MESSAGE value="implement add league" />
     <MESSAGE value="fix bugs 3 and implement delete league" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs 3 and implement delete league" />
+    <MESSAGE value="refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
   </component>
 </project>

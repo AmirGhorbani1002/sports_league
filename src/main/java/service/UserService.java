@@ -90,6 +90,7 @@ public class UserService {
                     System.out.println(club);
                 else break;
             }
+            check.printMessage("");
         }
     }
 

@@ -41,5 +41,6 @@ public class ClubList {
         }
         if (index - i >= 0)
             System.arraycopy(clubs, i + 1, clubs, i, index - i);
+        index--;
     }
 }

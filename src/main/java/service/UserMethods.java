@@ -28,13 +28,13 @@ public class UserMethods {
             System.out.print("Enter the name of the club you want to see: ");
             ApplicationObjects.getScanner().nextLine();
             String name = ApplicationObjects.getScanner().nextLine();
-            if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
+            if (ApplicationObjects.getUserService().loadClubByName(league, name) != null) {
                 System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
-            else {
+                check.printMessage("");
+            } else {
                 check.printMessage("There is no club with this name");
             }
         }
-
     }
 
     public void addClub(League league, String checkType) throws SQLException {
@@ -44,12 +44,15 @@ public class UserMethods {
         System.out.print("Enter the code of your club: ");
         String code = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().saveClub(league, checkType, name, code);
+        check.printMessage("Add club done!");
     }
 
     public void deleteClub(League league) {
         ApplicationObjects.getScanner().nextLine();
+        System.out.print("Enter the name of your club: ");
         String name = ApplicationObjects.getScanner().nextLine();
         ApplicationObjects.getUserService().deleteClub(league, name);
+        check.printMessage("Delete club done!");
     }
 
     public void addGame(League league, String checkType) throws SQLException {
@@ -66,10 +69,11 @@ public class UserMethods {
             Club clubTwo = checkClub(league, nameTwo);
             if (clubTwo == null) return;
             if (check.checkSameClubForGame(clubOne, clubTwo)) {
-                System.out.println("A club cannot play with itself!!!");
+                check.printMessage("A club cannot play with itself!!!");
                 return;
             }
             gameCalculate(league, checkType, nameOne, clubOne, clubTwo);
+            check.printMessage("Add game done!");
         }
     }
 
@@ -80,6 +84,7 @@ public class UserMethods {
         System.out.print("Enter the type of league's clubs: (For now we only have soccer and volleyball) ");
         String type = check.checkTypeClub(ApplicationObjects.getScanner().next());
         ApplicationObjects.getUserService().addLeague(name, type);
+        check.printMessage("Add league done!");
     }
 
     public void deleteLeague() throws SQLException {
@@ -91,6 +96,7 @@ public class UserMethods {
         String confirm = ApplicationObjects.getScanner().nextLine();
         if (Objects.equals(confirm, "confirm"))
             ApplicationObjects.getUserService().deleteLeague(name);
+        check.printMessage("Delete league done!");
     }
 
     private Club checkClub(League league, String name) {
@@ -137,5 +143,13 @@ public class UserMethods {
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
         else
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.DRAW);
+    }
+
+    private void pressEnter() {
+        System.out.println("Press enter to continue");
+        try {
+            System.in.read();
+        } catch (Exception ignored) {
+        }
     }
 }
