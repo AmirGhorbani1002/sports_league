@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
 
 public class Check {
 
-    public static void printMessage(String message) {
+    public void printMessage(String message) {
         System.out.println(message);
         pressEnter();
     }
 
-    public static String checkSet(String set) {
+    public String checkSet(String set) {
         String regex = "\\d";
         while (true) {
             if (Pattern.matches(regex, set)) {
@@ -30,11 +30,11 @@ public class Check {
         }
     }
 
-    public static boolean checkSameClubForGame(Club clubOne, Club clubTwo) {
+    public boolean checkSameClubForGame(Club clubOne, Club clubTwo) {
         return clubOne.equals(clubTwo);
     }
 
-    public static int checkLeagueExists(String input, int number) {
+    public int checkLeagueExists(String input, int number) {
         while (true){
             if (Pattern.matches("\\d*", input)) {
                 if (Integer.parseInt(input) <= number + 3)
@@ -51,7 +51,7 @@ public class Check {
         }
     }
 
-    public static String checkTypeClub(String type){
+    public String checkTypeClub(String type){
         while(true){
             if(Objects.equals(type.toLowerCase(), "soccer") || Objects.equals(type.toLowerCase(), "volleyball")){
                 return type;
@@ -63,7 +63,7 @@ public class Check {
         }
     }
 
-    private static void pressEnter() {
+    private void pressEnter() {
         System.out.println("Press enter to continue");
         try {
             System.in.read();

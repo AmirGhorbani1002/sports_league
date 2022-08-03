@@ -9,6 +9,7 @@ public class Game {
     private final Club clubOne;
     private final Club clubTwo;
     private final GameResult result;
+    private final MyMath myMath = new MyMath();
 
     public Game(Club clubOne, Club clubTwo, GameResult result) {
         this.clubOne = clubOne;
@@ -17,13 +18,13 @@ public class Game {
     }
 
     public void soccerScoreCalculation() {
-        MyMath.calculateNumberOfMatches(clubOne, clubTwo);
-        MyMath.calculateSoccerScore(clubOne, clubTwo, result);
+        myMath.calculateNumberOfMatches(clubOne, clubTwo);
+        myMath.calculateSoccerScore(clubOne, clubTwo, result);
     }
 
     public void volleyballScoreCalculation() {
-        MyMath.calculateNumberOfMatches(clubOne, clubTwo);
-        MyMath.calculateVolleyballScore(clubOne, clubTwo, result);
+        myMath.calculateNumberOfMatches(clubOne, clubTwo);
+        myMath.calculateVolleyballScore(clubOne, clubTwo, result);
     }
 
 }

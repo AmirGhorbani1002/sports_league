@@ -12,6 +12,7 @@ import java.util.Objects;
 public class OurLeagues {
 
     Leagues leagues = new Leagues();
+    Check check = new Check();
 
     public void showMenu() throws SQLException {
         while (true) {
@@ -28,7 +29,7 @@ public class OurLeagues {
             System.out.println((numberOfLeagues + 2) + ") Delete league");
             System.out.println((numberOfLeagues + 3) + ") Exit");
             System.out.print("Choose one of our leagues or add league: ");
-            int input = Check.checkLeagueExists(ApplicationObjects.getScanner().next(), numberOfLeagues);
+            int input = check.checkLeagueExists(ApplicationObjects.getScanner().next(), numberOfLeagues);
             if (input == numberOfLeagues + 1)
                 ApplicationObjects.getUserMethods().addLeague();
             else if (input == numberOfLeagues + 2)

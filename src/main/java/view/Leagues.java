@@ -1,13 +1,14 @@
 package view;
 
 import check.Check;
-import entity.Club;
 import object.ApplicationObjects;
 
 import java.sql.SQLException;
 import java.util.Objects;
 
 public class Leagues {
+
+    Check check = new Check();
 
     public void showMenu(entity.League league, String checkType) throws SQLException {
         while (true) {
@@ -32,7 +33,7 @@ public class Leagues {
             } else if (Objects.equals(input, "6")) {
                 break;
             } else {
-                Check.printMessage("Wrong input");
+                check.printMessage("Wrong input");
             }
         }
     }

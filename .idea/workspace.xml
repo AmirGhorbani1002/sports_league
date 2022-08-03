@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="fix bugs 3 and implement delete league">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SoccerClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Leagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Leagues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -326,20 +325,5 @@
     <MESSAGE value="implement add league" />
     <MESSAGE value="fix bugs 3 and implement delete league" />
     <option name="LAST_COMMIT_MESSAGE" value="fix bugs 3 and implement delete league" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/service/UserService.java</url>
-          <line>48</line>
-          <properties class="service.UserService" method="loadAllLeagues">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

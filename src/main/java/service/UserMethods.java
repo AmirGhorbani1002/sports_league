@@ -14,6 +14,8 @@ import java.util.Objects;
 
 public class UserMethods {
 
+    Check check = new Check();
+
     public void showTable(League league) {
         Arrays.sort(league.getClubs().getClubs(), new ClubListSortByScore());
         ApplicationObjects.getUserService().showTable(league);
@@ -21,7 +23,7 @@ public class UserMethods {
 
     public void showClub(League league) {
         if (league.getClubs().getClubs()[0] == null) {
-            Check.printMessage("This league does not have any clubs yet");
+            check.printMessage("This league does not have any clubs yet");
         } else {
             System.out.print("Enter the name of the club you want to see: ");
             ApplicationObjects.getScanner().nextLine();
@@ -29,7 +31,7 @@ public class UserMethods {
             if (ApplicationObjects.getUserService().loadClubByName(league, name) != null)
                 System.out.println(ApplicationObjects.getUserService().loadClubByName(league, name));
             else {
-                Check.printMessage("There is no club with this name");
+                check.printMessage("There is no club with this name");
             }
         }
 
@@ -52,7 +54,7 @@ public class UserMethods {
 
     public void addGame(League league, String checkType) throws SQLException {
         if (league.getClubs().getClubs()[0] == null || league.getClubs().getClubs()[1] == null) {
-            Check.printMessage("This league does not have enough clubs for game yet");
+            check.printMessage("This league does not have enough clubs for game yet");
         } else {
             System.out.print("Enter the name of first club: ");
             ApplicationObjects.getScanner().nextLine();
@@ -63,7 +65,7 @@ public class UserMethods {
             String nameTwo = ApplicationObjects.getScanner().nextLine();
             Club clubTwo = checkClub(league, nameTwo);
             if (clubTwo == null) return;
-            if (Check.checkSameClubForGame(clubOne, clubTwo)) {
+            if (check.checkSameClubForGame(clubOne, clubTwo)) {
                 System.out.println("A club cannot play with itself!!!");
                 return;
             }
@@ -76,7 +78,7 @@ public class UserMethods {
         ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
         System.out.print("Enter the type of league's clubs: (For now we only have soccer and volleyball) ");
-        String type = Check.checkTypeClub(ApplicationObjects.getScanner().next());
+        String type = check.checkTypeClub(ApplicationObjects.getScanner().next());
         ApplicationObjects.getUserService().addLeague(name, type);
     }
 
@@ -94,7 +96,7 @@ public class UserMethods {
     private Club checkClub(League league, String name) {
         Club club = ApplicationObjects.getUserService().loadClubByName(league, name);
         if (club == null) {
-            Check.printMessage("There is no club with this name");
+            check.printMessage("There is no club with this name");
             return null;
         }
         return club;
@@ -116,13 +118,13 @@ public class UserMethods {
         if (Objects.equals(result, "yes")) {
             System.out.print("How many sets did " + clubTwo.getName() + "'s club win? ");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
-            numberOfWinSet = Check.checkSet(numberOfWinSet);
+            numberOfWinSet = check.checkSet(numberOfWinSet);
             ((VolleyballClub) clubTwo).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.WIN);
         } else {
             System.out.print("How many sets did " + clubOne.getName() + "'s club win? ");
             String numberOfWinSet = ApplicationObjects.getScanner().next();
-            numberOfWinSet = Check.checkSet(numberOfWinSet);
+            numberOfWinSet = check.checkSet(numberOfWinSet);
             ((VolleyballClub) clubOne).setNumberOfWinningSets(Integer.parseInt(numberOfWinSet));
             ApplicationObjects.getUserService().addGame(league, clubOne, clubTwo, GameResult.LOSS);
         }

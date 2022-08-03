@@ -4,19 +4,17 @@ import check.Check;
 import entity.*;
 import enums.GameResult;
 import object.ApplicationObjects;
-import util.ClubList;
-import util.LeagueList;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class UserService {
 
+    Check check = new Check();
+
     public void saveClub(League league, String checkType, String name, String code) throws SQLException {
         if (loadClubByName(league, name) != null || loadClubByCode(league, code) != null) {
-            Check.printMessage("There is a club with this name or code");
+            check.printMessage("There is a club with this name or code");
         } else {
             Club club2 = getClub(checkType, name, code);
             league.getClubs().add(club2);
@@ -85,7 +83,7 @@ public class UserService {
 
     public void showTable(League league) {
         if (league.getClubs().getClubs()[0] == null) {
-            Check.printMessage("This league does not have any clubs yet");
+            check.printMessage("This league does not have any clubs yet");
         } else {
             for (Club club : league.getClubs().getClubs()) {
                 if (club != null)
@@ -97,7 +95,7 @@ public class UserService {
 
     public void deleteClub(League league, String name) {
         if (loadClubByName(league, name) == null) {
-            Check.printMessage("There is no club with this profile");
+            check.printMessage("There is no club with this profile");
         } else {
             for (Club club : league.getClubs().getClubs()) {
                 if (Objects.equals(club.getName(), name)) {
