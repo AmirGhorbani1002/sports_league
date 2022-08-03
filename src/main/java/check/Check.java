@@ -37,7 +37,7 @@ public class Check {
     public static int checkLeagueExists(String input, int number) {
         while (true){
             if (Pattern.matches("\\d*", input)) {
-                if (Integer.parseInt(input) <= number + 1)
+                if (Integer.parseInt(input) <= number + 3)
                     return Integer.parseInt(input);
                 else{
                     System.out.print("This number is not in our items. choose again: ");

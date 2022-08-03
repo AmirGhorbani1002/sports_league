@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add league list and refactor code">
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="implement add league">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
@@ -91,7 +91,7 @@
       <workItem from="1659454013672" duration="21000" />
       <workItem from="1659467672903" duration="3534000" />
       <workItem from="1659471402212" duration="3986000" />
-      <workItem from="1659516467711" duration="9267000" />
+      <workItem from="1659516467711" duration="11666000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -268,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659522035762</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="implement add league">
+      <created>1659527640823</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1659527640824</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +293,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add clubs and club list and enum" />
     <MESSAGE value="add leagues and menus" />
     <MESSAGE value="refactor code" />
     <MESSAGE value="refactor with my math" />
@@ -311,6 +317,22 @@
     <MESSAGE value="add check for same club have game" />
     <MESSAGE value="refactor leaguerepository" />
     <MESSAGE value="add league list and refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add league list and refactor code" />
+    <MESSAGE value="implement add league" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement add league" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/service/UserService.java</url>
+          <line>48</line>
+          <properties class="service.UserService" method="loadAllLeagues">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

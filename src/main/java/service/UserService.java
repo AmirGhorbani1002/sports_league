@@ -118,6 +118,11 @@ public class UserService {
         ApplicationObjects.getLeagueRepository().save(name,type);
     }
 
+    public void deleteLeague(String name) throws SQLException {
+        ApplicationObjects.getLeagueRepository().delete(name);
+        ApplicationObjects.getLeagueList().remove(name);
+    }
+
     private void scoreCalculate(Club clubOne, Game game) {
         if (clubOne instanceof SoccerClub)
             game.soccerScoreCalculation();

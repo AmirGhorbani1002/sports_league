@@ -73,10 +73,22 @@ public class UserMethods {
 
     public void addLeague() throws SQLException {
         System.out.print("Enter the name of league: ");
+        ApplicationObjects.getScanner().nextLine();
         String name = ApplicationObjects.getScanner().nextLine();
         System.out.print("Enter the type of league's clubs: (For now we only have soccer and volleyball) ");
         String type = ApplicationObjects.getScanner().next();
         ApplicationObjects.getUserService().addLeague(name,type);
+    }
+
+    public void deleteLeague() throws SQLException {
+        System.out.println("Enter the name of league: ");
+        ApplicationObjects.getScanner().nextLine();
+        String name = ApplicationObjects.getScanner().nextLine();
+        System.out.println(name);
+        System.out.print("Are you sure? So enter confirm to continue: ");
+        String confirm = ApplicationObjects.getScanner().nextLine();
+        if(Objects.equals(confirm, "confirm"))
+            ApplicationObjects.getUserService().deleteLeague(name);
     }
 
     private Club checkClub(League league, String name) {
