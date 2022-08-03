@@ -57,11 +57,11 @@ public class UserMethods {
             System.out.print("Enter the name of first club: ");
             ApplicationObjects.getScanner().nextLine();
             String nameOne = ApplicationObjects.getScanner().nextLine();
-            Club clubOne = getClub(league, nameOne);
+            Club clubOne = checkClub(league, nameOne);
             if (clubOne == null) return;
             System.out.print("Enter the name of second club: ");
             String nameTwo = ApplicationObjects.getScanner().nextLine();
-            Club clubTwo = getClub(league, nameTwo);
+            Club clubTwo = checkClub(league, nameTwo);
             if (clubTwo == null) return;
             if (Check.checkSameClubForGame(clubOne, clubTwo)) {
                 System.out.println("A club cannot play with itself!!!");
@@ -71,7 +71,15 @@ public class UserMethods {
         }
     }
 
-    private Club getClub(League league, String name) {
+    public void addLeague() throws SQLException {
+        System.out.print("Enter the name of league: ");
+        String name = ApplicationObjects.getScanner().nextLine();
+        System.out.print("Enter the type of league's clubs: (For now we only have soccer and volleyball) ");
+        String type = ApplicationObjects.getScanner().next();
+        ApplicationObjects.getUserService().addLeague(name,type);
+    }
+
+    private Club checkClub(League league, String name) {
         Club club = ApplicationObjects.getUserService().loadClubByName(league, name);
         if (club == null) {
             Check.printMessage("There is no club with this name");

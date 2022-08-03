@@ -35,19 +35,24 @@ public class OurLeagues {
                 Check.printMessage("Wrong input");
             }
         }*/
-
         while (true) {
+            int numberOfLeagues = 0;
             String[] type = ApplicationObjects.getUserService().loadAllLeagues();
             System.out.println("We have the following leagues");
             for (int i = 0; i < ApplicationObjects.getLeagueList().getLeagues().length; i++) {
                 if (ApplicationObjects.getLeagueList().getLeagues()[i] != null) {
                     System.out.println((i + 1) + ") " + ApplicationObjects.getLeagueList().getLeagues()[i].getName());
+                    numberOfLeagues++;
                 } else break;
             }
-            System.out.print("Choose one of our league: ");
-            String input = ApplicationObjects.getScanner().next();
-            leagues.showMenu(ApplicationObjects.getLeagueList().getLeagues()[Integer.parseInt(input) - 1]
-                    , type[Integer.parseInt(input) - 1]);
+            System.out.println((numberOfLeagues + 1) + ") Add league");
+            System.out.print("Choose one of our leagues or add league: ");
+            int input = Check.checkLeagueExists(ApplicationObjects.getScanner().next(), numberOfLeagues);
+            if(input == numberOfLeagues + 1)
+                System.out.println("hello");
+            else
+                leagues.showMenu(ApplicationObjects.getLeagueList().getLeagues()[input - 1]
+                    , type[input - 1]);
         }
     }
 }

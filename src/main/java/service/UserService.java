@@ -46,14 +46,6 @@ public class UserService {
         return null;
     }
 
-    /*public void loadLeague(League league, Club checkType) throws SQLException {
-        String temp = ApplicationObjects.getLeagueRepository().load(league);
-        if (checkType instanceof SoccerClub)
-            ApplicationObjects.getClubToString().stringToSoccerClubs(league, temp);
-        else
-            ApplicationObjects.getClubToString().stringToVolleyballClubs(league, temp);
-    }*/
-
     public String[] loadAllLeagues() throws SQLException {
         String[] information = ApplicationObjects.getLeagueRepository().load();
         String[] type = new String[1000];
@@ -120,6 +112,10 @@ public class UserService {
         Game game = new Game(clubOne, clubTwo, result);
         scoreCalculate(clubOne, game);
         saveLeague(league, clubOne);
+    }
+
+    public void addLeague(String name, String type) throws SQLException {
+        ApplicationObjects.getLeagueRepository().save(name,type);
     }
 
     private void scoreCalculate(Club clubOne, Game game) {

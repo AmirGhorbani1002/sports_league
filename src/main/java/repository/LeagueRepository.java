@@ -10,20 +10,6 @@ import java.sql.Statement;
 
 public class LeagueRepository {
 
-    /*public String load(League league) throws SQLException {
-        String query = """
-                select * from league
-                where name = ?;
-                """;
-        PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
-        preparedStatement.setString(1,league.getName());
-        ResultSet resultSet = preparedStatement.executeQuery();
-        if(resultSet.next())
-            return resultSet.getString("clubs");
-        else
-            return "";
-    }*/
-
     public String[] load() throws SQLException{
         String[] temp = new String[1000];
         int i = 0;
@@ -40,13 +26,15 @@ public class LeagueRepository {
         return temp;
     }
 
-    public void save(String clubs) throws SQLException {
+    public void save(String name,String clubType) throws SQLException {
         String query = """
-                insert into league(name)
-                values (?);
+                insert into league(name, clubs, club_type)
+                values (?,?,?);
                 """;
         PreparedStatement preparedStatement = ApplicationObjects.getConnection().prepareStatement(query);
-        preparedStatement.setString(1,clubs);
+        preparedStatement.setString(1,name);
+        preparedStatement.setString(2,null);
+        preparedStatement.setString(3,clubType);
         preparedStatement.executeUpdate();
     }
 

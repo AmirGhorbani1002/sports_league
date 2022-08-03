@@ -35,11 +35,20 @@ public class Check {
     }
 
     public static int checkLeagueExists(String input, int number) {
-        if (Pattern.matches("\\d*", input)) {
-            if (Integer.parseInt(input) <= number)
-                return Integer.parseInt(input);
+        while (true){
+            if (Pattern.matches("\\d*", input)) {
+                if (Integer.parseInt(input) <= number + 1)
+                    return Integer.parseInt(input);
+                else{
+                    System.out.print("This number is not in our items. choose again: ");
+                    input = ApplicationObjects.getScanner().next();
+                }
+            }
+            else{
+                System.out.print("Wrong input. Enter number: ");
+                input = ApplicationObjects.getScanner().next();
+            }
         }
-        return -1;
     }
 
     private static void pressEnter() {

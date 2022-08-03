@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="refactor leaguerepository">
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/LeagueList.java" afterDir="false" />
+    <list default="true" id="2f759cc8-3f91-4d89-b3e4-7af8ef307168" name="Changes" comment="add league list and refactor code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/check/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/check/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/League.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/list/ClubList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ClubList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/list/sort/ClubListSortByScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/sort/ClubListSortByScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/object/ApplicationObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/LeagueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ConvertClubString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ConvertClubString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Leagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Leagues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/OurLeagues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OurLeagues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +91,7 @@
       <workItem from="1659454013672" duration="21000" />
       <workItem from="1659467672903" duration="3534000" />
       <workItem from="1659471402212" duration="3986000" />
-      <workItem from="1659516467711" duration="5454000" />
+      <workItem from="1659516467711" duration="9267000" />
     </task>
     <task id="LOCAL-00001" summary="add clubs and club list and enum">
       <created>1659176669303</created>
@@ -268,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659474272786</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add league list and refactor code">
+      <created>1659522035762</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1659522035762</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +310,7 @@
     <MESSAGE value="add database and refactor code" />
     <MESSAGE value="add check for same club have game" />
     <MESSAGE value="refactor leaguerepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor leaguerepository" />
+    <MESSAGE value="add league list and refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add league list and refactor code" />
   </component>
 </project>
